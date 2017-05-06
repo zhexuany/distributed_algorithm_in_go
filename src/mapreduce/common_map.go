@@ -25,7 +25,6 @@ func doMap(
 	// Create file handles for future reduce.
 	for i := 0; i < nReduce; i++ {
 		file, _ := os.Create(reduceName(jobName, mapTaskNumber, i))
-		log.Printf("creating file %s for writing map data", file.Name())
 		fileHanlde[i] = file
 	}
 
