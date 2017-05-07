@@ -1,4 +1,5 @@
 #!/bin/bash
+export "GOPATH=$(PWD)/../.."
 go run ii.go master sequential pg-*.txt
 sort -k1,1 mrtmp.iiseq | sort -snk2,2 | grep -v '16' | tail -10 | diff - mr-challenge.txt > diff.out
 if [ -s diff.out ]
